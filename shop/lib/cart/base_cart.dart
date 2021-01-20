@@ -1,0 +1,10 @@
+import 'package:shop/cart/base_cart_item.dart';
+import 'package:shop/cart/base_cart_item_controller.dart';
+
+class BaseCart {
+  List<BaseCartItem> items;
+  BaseCart(this.items);
+  BaseCart.fromJson(Map<String, dynamic> jsonObject) {
+    this.items = BaseCartItemController.toBaseCartItem(jsonObject['items']);
+  }
+}
